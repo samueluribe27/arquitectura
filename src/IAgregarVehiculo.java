@@ -1,3 +1,3 @@
 public interface IAgregarVehiculo {
-    void agregarVehiculo(Vehiculo vehiculo);
+    void agregarVehiculo();
 }
