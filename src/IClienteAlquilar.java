@@ -1,3 +1,5 @@
+import java.util.Map;
+
 public interface IClienteAlquilar {
-    void alquilarVehiculo(Vehiculo vehiculo);
+    void alquilarVehiculo(Map<Integer, Cliente> clientes);
 }

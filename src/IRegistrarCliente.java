@@ -1,3 +1,3 @@
 public interface IRegistrarCliente {
-    void registrarCliente(Cliente cliente);
+    void registrarCliente();
 }
