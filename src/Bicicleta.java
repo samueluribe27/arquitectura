@@ -11,4 +11,7 @@ public class Bicicleta {
         this.cambios = cambios;
 
     }
+    public Bicicleta getBicicicletasCreadas(){
+        return (Bicicleta) GestorVehiculos.bicicletasCreadas;
+    }
 }

@@ -3,7 +3,7 @@ import java.lang.*;
 
 
 public class GestorVehiculos implements IAgregarVehiculo {
-    List<Bicicleta> bicicletasCreadas = new ArrayList<>();
+    static List<Bicicleta> bicicletasCreadas = new ArrayList<>();
     List<Scooter> scootersCreadas = new ArrayList<>();
     List<Vehiculo> vehiculosCreados = new ArrayList<>();
     Scanner in = new Scanner(System.in);

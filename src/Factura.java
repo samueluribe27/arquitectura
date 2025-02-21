@@ -2,17 +2,20 @@ public class Factura implements ICalcularPago {
     static int horasRentadas;
     private Vehiculo vehiculo;
     private Cliente cliente;
-    private double precioAPagar;
+    static double precioAPagar;
 
     @Override
     public void calcularPago(){
         double pago;
         pago = horasRentadas * Vehiculo.precioHora;
-        precioAPagar = pago;
+        Factura.precioAPagar = pago;
 
     }
 
     static void setHorasRentadas(int horasRentadas) {
         Factura.horasRentadas = horasRentadas;
+    }
+    public void crearFactura(){
+        System.out.println("**** Factura ****\n horas rentadas: "+ Factura.horasRentadas +"\n Precio a pagar "+ Factura.precioAPagar);
     }
 }
