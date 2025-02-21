@@ -38,7 +38,9 @@ public class Factura implements ICalcularPago, ICalcularIngresos {
     }
     @Override
     public void calcularIngresos(){
-
+    double ingresos = Empresa.getIngresos();
+    double ingresosTotales = ingresos + precioAPagar;
+    Empresa.setIngresos(ingresosTotales);
 
     }
 }

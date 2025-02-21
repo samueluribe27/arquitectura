@@ -6,4 +6,11 @@ public class Empresa {
     private double ingresos = 0;
     private String horario;
 
+    public static double getIngresos() {
+        return ingresos;
+    }
+
+    public static void setIngresos(double ingresos) {
+        this.ingresos = ingresos;
+    }
 }
