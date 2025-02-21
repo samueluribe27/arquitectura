@@ -77,12 +77,22 @@ public class Cliente implements IRecargarSaldo, IClienteAlquilar, IClienteRegres
         }
 
         if (!cliente.vehiculoAlquilado) {
+            System.out.print("Ingrese el número de horas para alquilar el vehículo: ");
+            int horas = Integer.parseInt(scanner.nextLine());
+
+            if (horas <= 0) {
+                System.out.println("Las horas de alquiler deben ser mayores a 0.");
+                return;
+            }
+
             cliente.vehiculoAlquilado = true;
-            System.out.println("Vehículo alquilado exitosamente.");
+            Factura.setHorasRentadas(horas);
+            System.out.println("Vehículo alquilado exitosamente por " + horas + " horas.");
         } else {
             System.out.println("El cliente ya tiene un vehículo alquilado.");
         }
     }
+
 
     @Override
     public void regresarVehiculo(Map<Integer, Cliente> clientes) {
