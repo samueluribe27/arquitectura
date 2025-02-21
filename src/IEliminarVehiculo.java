@@ -1,3 +1,5 @@
+import java.util.List;
+
 public interface IEliminarVehiculo {
-    void eliminarVehiculo(Vehiculo vehiculo);
+    void eliminarVehiculo(List<Vehiculo> vehiculosCreados, Vehiculo vehiculo);
 }

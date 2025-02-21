@@ -1,3 +1,3 @@
 public interface ICalcularIngresos {
-    void calcularIngreso();
+    void calcularIngresos();
 }

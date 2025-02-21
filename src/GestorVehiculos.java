@@ -2,15 +2,24 @@ import java.util.*;
 import java.lang.*;
 
 
-public class GestorVehiculos implements IAgregarVehiculo {
+public class GestorVehiculos implements IAgregarVehiculo, IEliminarVehiculo{
     static List<Bicicleta> bicicletasCreadas = new ArrayList<>();
     List<Scooter> scootersCreadas = new ArrayList<>();
     List<Vehiculo> vehiculosCreados = new ArrayList<>();
     Scanner in = new Scanner(System.in);
 
-    void obtenerVehiculo(Vehiculo vehiculo){
-
+    public List<Vehiculo> getVehiculosCreados() {
+        return vehiculosCreados;
     }
+
+    public List<Scooter> getScootersCreadas() {
+        return scootersCreadas;
+    }
+
+    public static List<Bicicleta> getBicicletasCreadas() {
+        return bicicletasCreadas;
+    }
+
     @Override
     public void agregarVehiculo() {
 
@@ -65,6 +74,16 @@ public class GestorVehiculos implements IAgregarVehiculo {
 
         }
 
+
+    }
+    @Override
+    public void eliminarVehiculo(List<Vehiculo> vehiculosCreados, Vehiculo vehiculo){
+        if(vehiculosCreados.remove(vehiculo)){
+            System.out.println("Vehículo eliminado: " + vehiculo);
+        }
+        else {
+            System.out.println("Vehículo no encontrado en la lista.");
+        }
 
     }
 }

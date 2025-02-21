@@ -3,7 +3,7 @@ public class Empresa {
     private String pais;
     private String anioFundacion;
     private String direccion;
-    private double ingresos;
+    private double ingresos = 0;
     private String horario;
 
 }
