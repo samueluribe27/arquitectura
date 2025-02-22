@@ -1,5 +1,6 @@
+import java.util.List;
 import java.util.Map;
 
 public interface IClienteRegresar {
-    void regresarVehiculo(Map<Integer, Cliente> clientes);
+    void regresarVehiculo(List<Cliente> clientes);
 }

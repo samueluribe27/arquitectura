@@ -1,4 +1,6 @@
+import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Cliente implements IRecargarSaldo, IClienteAlquilar, IClienteRegresar {
@@ -30,6 +32,7 @@ public class Cliente implements IRecargarSaldo, IClienteAlquilar, IClienteRegres
     public String getApellido(){
         return apellido;
     }
+
     public int edad(){
         return edad;
     }
@@ -66,50 +69,15 @@ public class Cliente implements IRecargarSaldo, IClienteAlquilar, IClienteRegres
         System.out.println("Saldo recargado exitosamente. Nuevo saldo: " + cliente.getSaldo());
     }
 
+
     @Override
-    public void alquilarVehiculo(Map<Integer, Cliente> clientes) {
-        System.out.print("Ingrese el ID del cliente para alquilar un vehículo: ");
-        int clienteId = Integer.parseInt(scanner.nextLine());
+    public void alquilarVehiculo(List<Cliente> clientes, GestorVehiculos gestorVehiculos) {
 
-        Cliente cliente = clientes.get(clienteId);
-        if (cliente == null) {
-            throw new IllegalArgumentException("Cliente no encontrado con el ID: " + clienteId);
-        }
-
-        if (!cliente.vehiculoAlquilado) {
-            System.out.print("Ingrese el número de horas para alquilar el vehículo: ");
-            int horas = Integer.parseInt(scanner.nextLine());
-
-            if (horas <= 0) {
-                System.out.println("Las horas de alquiler deben ser mayores a 0.");
-                return;
-            }
-
-            cliente.vehiculoAlquilado = true;
-            Factura.setHorasRentadas(horas);
-            System.out.println("Vehículo alquilado exitosamente por " + horas + " horas.");
-        } else {
-            System.out.println("El cliente ya tiene un vehículo alquilado.");
-        }
     }
 
-
     @Override
-    public void regresarVehiculo(Map<Integer, Cliente> clientes) {
-        System.out.print("Ingrese el ID del cliente para regresar un vehículo: ");
-        int clienteId = Integer.parseInt(scanner.nextLine());
+    public void regresarVehiculo(List<Cliente> clientes) {
 
-        Cliente cliente = clientes.get(clienteId);
-        if (cliente == null) {
-            throw new IllegalArgumentException("Cliente no encontrado con el ID: " + clienteId);
-        }
-
-        if (cliente.vehiculoAlquilado) {
-            cliente.vehiculoAlquilado = false;
-            System.out.println("Vehículo regresado exitosamente.");
-        } else {
-            System.out.println("El cliente no tiene un vehículo para regresar.");
-        }
     }
 
 
